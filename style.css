@@ -1,0 +1,139 @@
+:root{
+    --yellow: #F2C464;
+    --red1: #FF3737;
+    --red2: #FFC080;
+    --red3: #E01111;
+    --black1: #333333;
+    --black2: #444444;
+    --black3: #555555;
+    --box-shadow: 0 .5rem 1.5rem rgba(0,0,0,0.5)
+
+
+}
+
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: 800;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 5.5rem;
+    scroll-behavior: smooth;
+}
+
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: var(--black1);
+    padding: 1rem 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+
+}
+
+header nav a{
+    font-size: 1.6rem;
+    padding: 0.5rem 1.5rem;
+    color: whitesmoke;
+}
+header nav a:hover{
+    color: var(--yellow);
+    text-decoration: underline;
+}
+
+header .icons i,
+header .icons a{
+    cursor: pointer;
+    margin-left: 0.5rem;
+    height: 4.5rem;
+    line-height: 4.5rem;
+    width: 4.5rem;
+    text-align: center;
+    font-size: 1.7rem;
+    color: var(--red1);
+    border-radius: 50%;
+    background-color: whitesmoke;
+    transition: all 1s ease;
+}
+
+header .icons i:hover,
+header .icons a:hover{
+    color: var(--red3);
+    box-shadow: 0 .5rem 1.5rem var(--yellow);
+    transform: rotate(360deg);
+}
+
+header .icons #menu-bars{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width:991px){
+    html{
+        font-size: 53%;
+    }
+    header{
+        padding: 1rem 2rem;
+    }
+}
+@media (max-width:1500px){
+    header .icons #menu-bars{
+        display: inline-block;
+    }
+    header nav{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--black1);
+        border-top: 0.1rem solid var(--red2);
+        padding: 1rem;
+    }
+    header nav a{
+        display: block;
+        padding: 1.5rem;
+        margin: 1rem;
+        font-size: 2rem;
+        background-color: var(--black3);
+        border-radius: 7px;
+    }
+    header nav a:hover{
+        background-color: var(--yellow);
+        color: whitesmoke;
+        text-decoration: none;
+        transform: scale(1.04);
+    }
+    header nav .contact{
+        background-color: var(--yellow);
+    }
+}
