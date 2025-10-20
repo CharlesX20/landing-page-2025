@@ -45,12 +45,12 @@ header{
 
 }
 
-header nav a{
+header .nav a{
     font-size: 1.6rem;
     padding: 0.5rem 1.5rem;
     color: whitesmoke;
 }
-header nav a:hover{
+header .nav a:hover{
     color: var(--yellow);
     text-decoration: underline;
 }
@@ -81,7 +81,63 @@ header .icons #menu-bars{
     display: none;
 }
 
+#search-form{
+    position: fixed;
+    top: -110%;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 1004;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(245, 245, 245, 0.475);
+    
+}
 
+#search-form.active{
+    top: 0;
+}
+#search-form #search-box{
+    border-color: rgba(245, 245, 245, 0);
+    background: none;
+    width: 50rem;
+    border-bottom: 0.2rem solid var(--yellow);
+    padding: 1rem 0.5rem;
+    color: var(--yellow);
+    font-size: 3rem;
+    text-transform: none;
+}
+
+#search-form #search-box::placeholder{
+    color: var(--yellow);
+}
+
+#search-form #search-box::-webkit-search-cancel-button{
+    -webkit-appearance: none;
+}
+
+#search-form label{
+    color: var(--yellow);
+    cursor: pointer;
+    font-size: 3rem;
+    padding-left: 0.5rem;
+}
+#search-form label:hover{
+    color: var(--red3);
+}
+#search-form #close{
+    position: absolute;
+    color: var(--yellow);
+    cursor: pointer;
+    top: 2rem;
+    right: 3rem;
+    font-size: 5rem;
+}
+#search-form #close:hover{
+    color: var(--red3);
+}
 
 
 
@@ -98,6 +154,12 @@ header .icons #menu-bars{
 
 
 /* media queries */
+@media (max-width:768px){
+    #search-form #search-box{
+        width: 90%;
+        margin: 0 1rem;
+    }
+}
 @media (max-width:991px){
     html{
         font-size: 53%;
@@ -110,7 +172,7 @@ header .icons #menu-bars{
     header .icons #menu-bars{
         display: inline-block;
     }
-    header nav{
+    header .nav{
         position: absolute;
         top: 100%;
         left: 0;
@@ -118,8 +180,13 @@ header .icons #menu-bars{
         background-color: var(--black1);
         border-top: 0.1rem solid var(--red2);
         padding: 1rem;
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
     }
-    header nav a{
+
+    header .nav.active{
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+    header .nav a{
         display: block;
         padding: 1.5rem;
         margin: 1rem;
@@ -127,13 +194,17 @@ header .icons #menu-bars{
         background-color: var(--black3);
         border-radius: 7px;
     }
-    header nav a:hover{
+    header .nav a:hover{
         background-color: var(--yellow);
         color: whitesmoke;
         text-decoration: none;
         transform: scale(1.04);
     }
-    header nav .contact{
+    header .nav .order{
         background-color: var(--yellow);
+    }
+    header .icons i,
+    header .icons a{
+        font-size: 2.5rem;
     }
 }
