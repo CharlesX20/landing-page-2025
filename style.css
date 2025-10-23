@@ -446,6 +446,77 @@ header .icons #menu-bars{
 }
 
 
+footer{
+    text-align: center;
+    box-shadow: var(--box-shadow);
+}
+footer .icons-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    gap: 2rem;
+}
+footer .icons-container .icons{
+    text-align: center;
+    padding: 3rem 2rem;
+}
+footer .icons-container .icons i{
+    height: 6rem;
+    width: 6rem;
+    border-radius: 50%;
+    background-color: var(--yellow);
+    color: whitesmoke;
+    margin-bottom: 0.5rem;
+    line-height: 5.8rem;
+    font-size: 2rem;
+}
+
+footer .icons-container .icons h3{
+    font-size: 2rem;
+    color: var(--black1);
+    padding: 1rem 0;
+}
+
+footer .icons-container .icons p{
+    line-height: 1.5;
+    font-size: 1.6rem;
+    color: var(--black3);
+    text-transform: none;
+}
+
+footer .credit{
+    padding: 2rem 0;
+    margin-top: 2rem;
+    border-top: 0.2rem solid var(--red2);
+    font-size: 2rem;
+    color: var(--black3);
+}
+footer .credit span{
+    color: var(--yellow);
+}
+
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.loader-container img{
+    width: 20rem;
+}
+
+.loader-container.fade-out{
+    top: 110%;
+    opacity: 0;
+}
+
+
 
 
 
