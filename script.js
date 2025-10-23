@@ -1,3 +1,4 @@
+// DOM Element Selectors
 let menu = document.querySelector("#menu-bars");
 let navbar = document.querySelector(".nav");
 let searchIcon = document.querySelector("#search-icon")
@@ -6,13 +7,18 @@ let searchClose = document.querySelector("#close")
 let section = document.querySelectorAll('section')
 let navLinks = document.querySelectorAll('header .nav a')
 
+// Dark/Light Mode Toggle
+let themeToggle = document.querySelector("#theme-toggle");
+let currentTheme = localStorage.getItem('theme') || 'light';
 
 
+// Mobile Menu Toggle Functionality
 menu.onclick = () => {
     menu.classList.toggle('fa-times');
     navbar.classList.toggle('active')
 }
 
+// Navigation Active State on Scroll
 window.onscroll = () => {
     menu.classList.remove('fa-times');
     navbar.classList.remove('active');
@@ -33,6 +39,7 @@ window.onscroll = () => {
     })
 }
 
+// Search Overlay Toggle
 searchIcon.onclick = () => {
     searchForm.classList.toggle('active')
 }
@@ -41,7 +48,7 @@ searchClose.onclick = () => {
     searchForm.classList.remove('active')
 }
 
-//Initialize swiper
+//Initialize Swiper Slider Configuration with Autoplay Progress
 const progressCircle = document.querySelector(".autoplay-progress svg");
     const progressContent = document.querySelector(".autoplay-progress span");
     var swiper = new Swiper(".home-slider", {
@@ -63,6 +70,7 @@ const progressCircle = document.querySelector(".autoplay-progress svg");
       }
 });
 
+// Page Loader Functions
 function loader(){
   document.querySelector('.loader-container').classList.add('fade-out')
 }
@@ -72,3 +80,43 @@ function fadeOut(){
 }
 
 window.onload = fadeOut
+
+
+// Set initial theme
+if (currentTheme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    themeToggle.classList.remove('fa-moon');
+    themeToggle.classList.add('fa-sun');
+}
+
+// Theme toggle functionality with loader
+themeToggle.onclick = () => {
+    // Show loader
+    document.querySelector('.loader-container').classList.remove('fade-out');
+    document.querySelector('.loader-container').style.display = 'flex';
+    
+    setTimeout(() => {
+        if (document.documentElement.getAttribute('data-theme') === 'dark') {
+            // Switch to light mode
+            document.documentElement.removeAttribute('data-theme');
+            themeToggle.classList.remove('fa-sun');
+            themeToggle.classList.add('fa-moon');
+            localStorage.setItem('theme', 'light');
+        } else {
+            // Switch to dark mode
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeToggle.classList.remove('fa-moon');
+            themeToggle.classList.add('fa-sun');
+            localStorage.setItem('theme', 'dark');
+        }
+        
+        // Hide loader after theme change
+        setTimeout(() => {
+            document.querySelector('.loader-container').classList.add('fade-out');
+            setTimeout(() => {
+                document.querySelector('.loader-container').style.display = 'none';
+            }, 1000);
+        }, 500);
+        
+    }, 1000);
+}

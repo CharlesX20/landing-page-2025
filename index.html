@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Meta tags for character set and responsive viewport -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- External stylesheets and scripts -->
     <link rel="icon" type="image/svg+xml" href="images/pizza-logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"/>
@@ -12,6 +14,7 @@
 </head>
 <body>
 <header>
+    <!-- Main header with logo, navigation, and utility icons -->
     <a href="#home"><img src="images/pizza-logo.png" alt="pizza-logo" width="180"></a>
     <nav class="nav">
         <a class="active" href="#home">home</a>
@@ -27,13 +30,13 @@
         <div class="icons">
             <i class="fas fa-bars" id="menu-bars"></i>
             <i class="fas fa-search" id="search-icon"></i>
-            <a href="#" class="fas fa-heart"></a>
+            <a href="#" class="fas fa-moon" id="theme-toggle"></a>
             <a href="#" class="fas fa-shopping-cart"></a>
         </div>    
 
 </header>
 
-
+<!-- Search overlay form  -->
 <form action="" id="search-form">
     <input type="search" name="" placeholder="search here..." id="search-box">
     <label for="search-box" class="fas fa-search"></label>
@@ -41,6 +44,7 @@
 </form>
 
 <section class="home" id="home">
+    <!-- Hero slider section with autoplay functionality -->
     <div class="swiper home-slider">
         <div class="swiper-wrapper wrapper">
             <div class="swiper-slide slide">
@@ -51,7 +55,7 @@
                     <a href="#" class="btn">order now</a>
                 </div>
                 <div class="image">
-                    <img src="images/pizza1.jpg" alt="pizza-image">
+                    <img src="images/pizza1-removebg-preview.png" alt="pizza-image">
                 </div>
             </div>
 
@@ -63,7 +67,7 @@
                     <a href="#" class="btn">order now</a>
                 </div>
                 <div class="image">
-                    <img src="images/pizza1.jpg" alt="pizza-image">
+                    <img src="images/pizza1-removebg-preview.png" alt="pizza-image">
                 </div>
             </div>
 
@@ -75,7 +79,7 @@
                     <a href="#" class="btn">order now</a>
                 </div>
                 <div class="image">
-                    <img src="images/pizza1.jpg" alt="pizza-image">
+                    <img src="images/pizza1-removebg-preview.png" alt="pizza-image">
                 </div>
             </div>
 
@@ -92,6 +96,7 @@
 
 
 <section class="pizza" id="menu">
+    <!-- Popular pizzas showcase section -->
     <h3 class="sub-heading">our pizza</h3>
     <h1 class="heading"> popular pizzas</h1>
     <div class="box-container">
@@ -195,6 +200,7 @@
 
 
 <section class="about" id="about">
+    <!-- About us and value proposition section -->
     <h3 class="sub-heading">about us</h3>
     <h1 class="heading"> why choose us? </h1>
 
@@ -229,8 +235,9 @@
 
 
 <section class="menu" id="menu">
+    <!-- Today's special menu items section -->
     <h3 class="sub-heading"> our menu </h3>
-    <h1 class="heading"> today's speciality </h1>
+    <h1 class="heading"> today's specialty </h1>
 
     <div class="box-container">
         <div class="box">
@@ -377,6 +384,7 @@
 
 
 <footer>
+    <!-- Footer with contact info, hours, and address -->
     <div class="icons-container">
         <div class="icons">
             <i class="fas fa-clock"></i>
@@ -402,6 +410,7 @@
     <div class="credit">2025 Pizza <span>People & Sub</span> | all rights reserved</div>
 </footer>
 
+<!-- Loader overlay -->
 <div class="loader-container">
     <img src="images/pizza-gif.gif" alt="loader-image">
 </div>
